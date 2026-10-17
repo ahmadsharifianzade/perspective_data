@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#091521" />
+  <title>پکیج‌های انتشار گزارش | پرسپکتیو دیتا</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#091521; --paper:#fff; --ink:#152a37; --muted:#71818d; --line:#e7edf0; --teal:#0eaa9b; --teal-dark:#087e77; --gold:#d7a34b; }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;min-height:100vh;background:var(--bg);color:#fff;font-family:'Vazirmatn','Vazir',Tahoma,sans-serif;-webkit-font-smoothing:antialiased}
+    .canvas{max-width:1500px;margin:auto;padding:45px 54px 34px;position:relative;overflow:hidden;background:radial-gradient(ellipse 750px 420px at 50% -6%,#15434c 0%,transparent 73%),radial-gradient(ellipse 510px 400px at 99% 81%,#112d39 0%,transparent 78%),#091521}
+    .topline{display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:1290px;margin:0 auto 31px}
+    .brand{display:flex;gap:12px;align-items:center}.brand-mark{width:44px;height:44px;border-radius:13px;border:1px solid #3b6268;background:linear-gradient(135deg,#174a52,#0b2b37);display:grid;place-items:center;position:relative;overflow:hidden}
+    .brand-mark svg{width:31px;height:31px}.brand strong{display:block;font-size:19px;font-weight:800;letter-spacing:-.5px}.brand small{display:block;color:#aac1c4;font-size:11px;direction:ltr;text-align:right;letter-spacing:2px;font-family:Arial,sans-serif;margin-top:-2px}
+    .top-meta{display:flex;align-items:center;gap:8px;padding:9px 16px;color:#b3c8cd;border:1px solid #32515c;border-radius:30px;font-size:12px;background:#ffffff06;direction:ltr}
+    .top-meta .dot{height:7px;width:7px;border-radius:50%;background:#39b5a5;box-shadow:0 0 10px #34bdaa60}
+    .hero{text-align:center;margin:0 auto 32px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:#71d3c5;font-size:12px;font-weight:700;letter-spacing:.2px;margin-bottom:10px}.eyebrow:before,.eyebrow:after{content:'';display:inline-block;width:29px;height:1px;background:#3c867e}
+    h1{font-size:37px;letter-spacing:-1.3px;line-height:1.65;margin:0 0 7px;font-weight:900}h1 em{font-style:normal;color:#61cbbc}.subhead{font-size:14px;line-height:2;color:#a7bdc4;margin:0}
+    .cards{max-width:1290px;margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+    .card{background:#fff;border-radius:23px;color:var(--ink);padding:25px 25px 22px;display:flex;flex-direction:column;box-shadow:0 13px 31px #00000026;position:relative;overflow:hidden;border:2px solid transparent;min-height:650px}
+    .card.basic{order:1}.card.plus{order:2}.card.premium{order:3;background:linear-gradient(180deg,#f2fffc 0%,#fff 37%);border-color:#37b7a5;box-shadow:0 14px 50px #25ad982b}
+    .tier-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px;height:23px}.tier-en{font-family:Arial,sans-serif;direction:ltr;letter-spacing:2.4px;font-size:12px;font-weight:800;color:#8899a0}.premium .tier-en{color:#079688}.pill{border-radius:100px;padding:5px 11px;background:#def8ef;color:#098d76;font-size:10px;font-weight:800;white-space:nowrap}
+    .card h2{font-size:22px;letter-spacing:-.45px;margin:0 0 5px;font-weight:900}.card .desc{margin:0;min-height:51px;font-size:12px;line-height:1.95;color:#738590}
+    .price-row{display:flex;align-items:baseline;gap:9px;margin:12px 0 14px}.price{font-family:'Vazirmatn',sans-serif;font-size:38px;font-weight:900;line-height:1.5;letter-spacing:-1.4px;color:#102c39;white-space:nowrap}.premium .price{color:#078f81}.currency{font-size:14px;color:#647b83;font-weight:700}
+    .rule{height:1px;background:#e5edef;margin-bottom:15px}.benefit-title{font-size:12px;font-weight:900;margin:0 0 11px;color:#375461}
+    .features{padding:0;list-style:none;margin:0;display:flex;flex-direction:column;gap:12px;flex:1}.features li{display:flex;align-items:flex-start;gap:10px;font-size:12.35px;line-height:1.85;color:#405764;font-weight:500}.features li b{font-weight:800;color:#213f4d}.check{flex:none;margin-top:2px;width:20px;height:20px;border-radius:7px;display:grid;place-items:center;background:#eef4f5;color:#278e8d}.premium .check{background:#ddf8f1;color:#08967e}
+    .check svg{height:12px;width:12px;stroke:currentColor;stroke-width:2.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .card-footer{margin-top:22px;border-radius:11px;background:#f1f5f6;text-align:center;padding:11px 7px;font-size:11px;font-weight:800;color:#607680}.premium .card-footer{color:white;background:linear-gradient(95deg,#0d9e91,#087b7b)}
+    .foot{max-width:1290px;margin:24px auto 0;display:flex;align-items:center;justify-content:space-between;gap:25px;color:#b6c8cb}.footnote{max-width:770px;font-size:11px;line-height:2;margin:0}.handle{font-family:Arial,sans-serif;font-size:15px;font-weight:800;color:#70d6c7;direction:ltr;text-decoration:none;white-space:nowrap}
+    .microline{display:flex;gap:16px;align-items:center;justify-content:center;color:#8eafb6;font-size:11px;margin-top:21px}.microline span{width:4px;height:4px;border-radius:50%;background:#468d8e}
+    @media(max-width:1050px){.canvas{padding:34px 20px}.cards{gap:12px}.card{padding:22px 17px;min-height:670px}.price{font-size:31px}.card h2{font-size:19px}.features li{font-size:11.5px}h1{font-size:31px}}
+    @media(max-width:700px){.canvas{padding:24px 16px}.topline{margin-bottom:26px}.brand strong{font-size:15px}.brand-mark{width:38px;height:38px}.top-meta{font-size:10px;padding:6px 9px}h1{font-size:27px}.subhead{font-size:12px}.cards{grid-template-columns:1fr;max-width:440px}.card{min-height:0;padding:23px}.card.basic,.card.plus,.card.premium{order:initial}.price{font-size:36px}.features li{font-size:13px}.foot{flex-direction:column;align-items:center;text-align:center}.microline{flex-wrap:wrap;text-align:center}.hero{margin-bottom:28px}}
+    @media print{body{background:white}.canvas{max-width:none;min-height:100vh;-webkit-print-color-adjust:exact;print-color-adjust:exact} @page{size:landscape;margin:0}}
+  </style>
+</head>
+<body>
+  <main class="canvas">
+    <header class="topline">
+      <div class="brand"><div class="brand-mark"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 29V23M15 29V14M23 29V19M31 29V8" stroke="#7BE3D0" stroke-width="4.2" stroke-linecap="round"/><path d="M5 33H35" stroke="#437F87" stroke-width="1.5"/></svg></div><div><strong>پرسپکتیو دیتا</strong><small>PERSPECTIVE DATA</small></div></div>
+      <div class="top-meta"><span class="dot"></span> MEDIA KIT · 2026</div>
+    </header>
+    <section class="hero">
+      <div class="eyebrow">خدمات اختصاصی انتشار گزارش</div>
+      <h1>گزارش شما، <em>فراتر از یک انتشار ساده</em></h1>
+      <p class="subhead">از معرفی حرفه‌ای تا روایت داده‌محور؛ پکیج متناسب با هدف برندتان را انتخاب کنید.</p>
+    </section>
+    <section class="cards" aria-label="پلن‌های همکاری">
+      <article class="card premium">
+        <div class="tier-top"><span class="tier-en">PREMIUM</span><span class="pill">بیشترین ارزش همکاری</span></div>
+        <h2>پوشش اختصاصی</h2><p class="desc">برای رونمایی گسترده‌تر از گزارش و ساخت یک روایت حرفه‌ای از داده‌های آن</p>
+        <div class="price-row"><span class="price">۷,۹۰۰,۰۰۰</span><span class="currency">تومان</span></div>
+        <div class="rule"></div><p class="benefit-title">شامل تمام خدمات پلن Plus، به‌علاوه:</p>
+        <ul class="features">
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span><b>کمپین سه‌پستی</b> برای معرفی، تحلیل و یادآوری گزارش</span></li>
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span>طراحی <b>۵ اسلاید داده‌محور</b> اختصاصی</span></li>
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span><b>تحلیل اختصاصی</b> مهم‌ترین یافته‌های گزارش</span></li>
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span>مقایسه با گزارش سال قبل، در صورت وجود داده معتبر</span></li>
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span>مصاحبه متنی کوتاه با تهیه‌کننده گزارش</span></li>
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span>انتشار در لینکدین پرسپکتیو دیتا</span></li>
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span><b>گزارش نهایی عملکرد کمپین</b></span></li>
+        </ul><div class="card-footer">مناسب لانچ گزارش‌های مهم برند</div>
+      </article>
+      <article class="card plus">
+        <div class="tier-top"><span class="tier-en">PLUS</span></div>
+        <h2>انتشار تحلیلی</h2><p class="desc">برای تبدیل گزارش به محتوای جذاب، قابل فهم و قابل اشتراک‌گذاری</p>
+        <div class="price-row"><span class="price">۵,۹۰۰,۰۰۰</span><span class="currency">تومان</span></div>
+        <div class="rule"></div><p class="benefit-title">شامل تمام خدمات پلن Basic، به‌علاوه:</p>
+        <ul class="features">
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span>استخراج <b>۵ تا ۷ یافته کلیدی</b> از گزارش</span></li>
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span>طراحی <b>۳ اسلاید داده‌محور</b> اختصاصی</span></li>
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span>انتشار <b>یک پست تکمیلی</b> درباره یافته‌های مهم</span></li>
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span>پین گزارش به مدت <b>۴۸ ساعت</b></span></li>
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span>یک نوبت بازنشر یادآوری گزارش</span></li>
+        </ul><div class="card-footer">مناسب گزارش‌های تحقیقاتی و صنعتی</div>
+      </article>
+      <article class="card basic">
+        <div class="tier-top"><span class="tier-en">BASIC</span></div>
+        <h2>انتشار ویژه</h2><p class="desc">برای معرفی هدفمند گزارش به مخاطبان علاقه‌مند به داده و کسب‌وکار</p>
+        <div class="price-row"><span class="price">۲,۹۰۰,۰۰۰</span><span class="currency">تومان</span></div>
+        <div class="rule"></div><p class="benefit-title">خدمات این پلن:</p>
+        <ul class="features">
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span><b>انتشار اختصاصی</b> گزارش همراه با معرفی برند</span></li>
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span>تنظیم و بهینه‌سازی متن معرفی گزارش</span></li>
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span>استخراج <b>۳ یافته کلیدی</b> در متن پست</span></li>
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span>پین گزارش به مدت <b>۲۴ ساعت</b></span></li>
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span>انتشار در زمان هماهنگ‌شده با برند</span></li>
+          <li><span class="check"><svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg></span><span>ارائه آمار بازدید گزارش</span></li>
+        </ul><div class="card-footer">مناسب معرفی سریع و حرفه‌ای</div>
+      </article>
+    </section>
+    <footer class="foot"><p class="footnote">انتشار معمول گزارش‌ها مطابق سیاست تحریریه پرسپکتیو دیتا همچنان رایگان است. خدمات فوق ویژه و سفارشی‌اند. پذیرش محتوا پس از بررسی تحریریه انجام می‌شود؛ تعداد بازدید یا دانلود تضمین نمی‌شود.</p><a class="handle" href="https://t.me/perspective_data">@perspective_data</a></footer>
+    <div class="microline">داده را به داستانی خواندنی تبدیل کنیم <span></span> رسانه تخصصی گزارش‌های داده‌محور</div>
+  </main>
+</body>
+</html>
